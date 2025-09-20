@@ -123,8 +123,10 @@ class MediaWikiDumper:
                 self.logger.warning(f"No text found for old_id {text_id} (page: {page_title})")
                 return None
             
-            return result[0]
-            
+            # blob to string
+            content = result[0].decode('utf-8', errors='replace')
+            return content
+
         except Error as e:
             self.logger.error(f"Error getting content for page {page_title}: {e}")
             return None
