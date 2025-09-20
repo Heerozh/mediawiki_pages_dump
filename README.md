@@ -20,7 +20,9 @@ This tool extracts page content by following the MediaWiki database schema:
 ### Basic Usage
 
 ```bash
-python mediawiki_dump.py --host localhost --user wiki_user --password wiki_pass --database wikidb
+uv run mediawiki_dump.py --host localhost --user wiki_user --password wiki_pass --database wikidb
+
+uv run wikitext2markdown.py --input ./pages/ --output ./md/
 ```
 
 ### Advanced Usage
